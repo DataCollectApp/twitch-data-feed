@@ -21,7 +21,7 @@
     <java.version>13</java.version>
 
     <twitch-data-feed-events.version>0.1.0</twitch-data-feed-events.version>
-    <time.version>0.1.0</time.version>
+    <time.version>0.1.1</time.version>
 
     <rome.version>1.5.0</rome.version>
     <json.version>20180813</json.version>

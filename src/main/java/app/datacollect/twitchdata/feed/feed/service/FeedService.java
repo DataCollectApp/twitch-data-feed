@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class FeedService {
 
-  private static final int FEED_READ_DELAY_SECONDS = 300;
+  private static final int FEED_READ_DELAY_SECONDS = 1;
 
   private final FeedRepository repository;
 
@@ -40,7 +40,7 @@ public class FeedService {
               MediaType.APPLICATION_JSON_VALUE,
               publisherEntry.getContent());
       feedEntries.add(feedEntry);
-      lastPublishedTime = lastPublishedTime.plusSeconds(1);
+      lastPublishedTime = lastPublishedTime.plusMilliseconds(1);
     }
     repository.insertEntries(table, feedEntries);
     return feedEntries.stream().map(FeedEntry::getId).collect(Collectors.toList());

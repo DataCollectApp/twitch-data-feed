@@ -1,23 +1,6 @@
 package app.datacollect.twitchdata.feed.common.repository;
 
-@SuppressWarnings("unused")
 public final class Tables {
-
-  public static final class CHAT_MESSAGE_FEED extends FEED {
-    public static final String TABLE = "chat_message_feed";
-  }
-
-  public static final class CONNECTION_FEED extends FEED {
-    public static final String TABLE = "connection_feed";
-  }
-
-  public static final class HOST_FEED extends FEED {
-    public static final String TABLE = "host_feed";
-  }
-
-  public static final class PUNISHMENT_FEED extends FEED {
-    public static final String TABLE = "punishment_feed";
-  }
 
   public static class FEED {
     public static final String ID = "id";
