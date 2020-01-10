@@ -50,7 +50,8 @@ public class PunishmentFeedController {
     if (errorMessage.isPresent()) {
       return ResponseEntity.badRequest().body(errorMessage.get());
     }
-    final List<FeedEntry> feedEntries = service.getEntries("punishment_feed", marker, limit);
+    final List<FeedEntry> feedEntries =
+        service.getEntries(feedConfigProperties.getTableName(), marker, limit);
     return ResponseEntity.ok(
         syndFeedService.createFeed(feedEntries, feedConfigProperties).createWireFeed());
   }
@@ -58,7 +59,7 @@ public class PunishmentFeedController {
   @GetMapping(value = PUNISHMENT + "/{id}", produces = APPLICATION_ATOM_XML_VALUE)
   public ResponseEntity<WireFeed> getPunishmentFeedEntry(@PathVariable("id") UUID id) {
     return service
-        .getEntry("punishment_feed", id)
+        .getEntry(feedConfigProperties.getTableName(), id)
         .map(
             feedEntry ->
                 ResponseEntity.ok(

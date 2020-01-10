@@ -14,15 +14,19 @@ The following properties are required to run the application:
 | TWITCH_DATA_FEED_CONFIG_CHAT_MESSAGE_NAME | Name of the chat message feed |
 | TWITCH_DATA_FEED_CONFIG_CHAT_MESSAGE_DESCRIPTION | Description of the chat message feed |
 | TWITCH_DATA_FEED_CONFIG_CHAT_MESSAGE_AUTHOR | Author of the chat message feed |
+| TWITCH_DATA_FEED_CONFIG_CHAT_MESSAGE_TABLE_NAME | Table name for the chat message feed |
 | TWITCH_DATA_FEED_CONFIG_CONNECTION_NAME | Name of the connection feed |
 | TWITCH_DATA_FEED_CONFIG_CONNECTION_DESCRIPTION | Description of the connection feed |
 | TWITCH_DATA_FEED_CONFIG_CONNECTION_AUTHOR | Author of the connection feed |
+| TWITCH_DATA_FEED_CONFIG_CONNECTION_TABLE_NAME | Table name for the connection feed |
 | TWITCH_DATA_FEED_CONFIG_HOST_NAME | Name of the host feed |
 | TWITCH_DATA_FEED_CONFIG_HOST_DESCRIPTION | Description of the host feed |
 | TWITCH_DATA_FEED_CONFIG_HOST_AUTHOR | Author of the host feed |
+| TWITCH_DATA_FEED_CONFIG_HOST_TABLE_NAME | Table name for the host feed |
 | TWITCH_DATA_FEED_CONFIG_PUNISHMENT_NAME | Name of the punishment feed |
 | TWITCH_DATA_FEED_CONFIG_PUNISHMENT_DESCRIPTION | Description of the punishment feed |
 | TWITCH_DATA_FEED_CONFIG_PUNISHMENT_AUTHOR | Author of the punishment feed |
+| TWITCH_DATA_FEED_CONFIG_PUNISHMENT_TABLE_NAME | Table name for the punishment feed |
 
 ### Database migration
 The application manages the database schema with Flyway.

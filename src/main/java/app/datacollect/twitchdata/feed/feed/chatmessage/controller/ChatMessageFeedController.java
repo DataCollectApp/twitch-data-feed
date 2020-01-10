@@ -50,7 +50,8 @@ public class ChatMessageFeedController {
     if (errorMessage.isPresent()) {
       return ResponseEntity.badRequest().body(errorMessage.get());
     }
-    final List<FeedEntry> feedEntries = service.getEntries("chat_message_feed", marker, limit);
+    final List<FeedEntry> feedEntries =
+        service.getEntries(feedConfigProperties.getTableName(), marker, limit);
     return ResponseEntity.ok(
         syndFeedService.createFeed(feedEntries, feedConfigProperties).createWireFeed());
   }
@@ -58,7 +59,7 @@ public class ChatMessageFeedController {
   @GetMapping(value = CHAT_MESSAGE + "/{id}", produces = APPLICATION_ATOM_XML_VALUE)
   public ResponseEntity<WireFeed> getChatMessageFeedEntry(@PathVariable("id") UUID id) {
     return service
-        .getEntry("chat_message_feed", id)
+        .getEntry(feedConfigProperties.getTableName(), id)
         .map(
             feedEntry ->
                 ResponseEntity.ok(

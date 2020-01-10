@@ -4,6 +4,7 @@ public class FeedConfigProperties {
   private String name;
   private String description;
   private String author;
+  private String tableName;
 
   public String getName() {
     return name;
@@ -27,5 +28,13 @@ public class FeedConfigProperties {
 
   public void setAuthor(String author) {
     this.author = author;
+  }
+
+  public String getTableName() {
+    return tableName;
+  }
+
+  public void setTableName(String tableName) {
+    this.tableName = tableName;
   }
 }

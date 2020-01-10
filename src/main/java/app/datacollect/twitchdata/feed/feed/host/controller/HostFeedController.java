@@ -50,7 +50,8 @@ public class HostFeedController {
     if (errorMessage.isPresent()) {
       return ResponseEntity.badRequest().body(errorMessage.get());
     }
-    final List<FeedEntry> feedEntries = service.getEntries("host_feed", marker, limit);
+    final List<FeedEntry> feedEntries =
+        service.getEntries(feedConfigProperties.getTableName(), marker, limit);
     return ResponseEntity.ok(
         syndFeedService.createFeed(feedEntries, feedConfigProperties).createWireFeed());
   }
@@ -58,7 +59,7 @@ public class HostFeedController {
   @GetMapping(value = HOST + "/{id}", produces = APPLICATION_ATOM_XML_VALUE)
   public ResponseEntity<WireFeed> getHostFeedEntry(@PathVariable("id") UUID id) {
     return service
-        .getEntry("host_feed", id)
+        .getEntry(feedConfigProperties.getTableName(), id)
         .map(
             feedEntry ->
                 ResponseEntity.ok(
